@@ -1,0 +1,66 @@
+Name         : kde5-libnm-qt
+Version      : 5.0.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : Library that wraps NetworkManager DBus API
+Description  : |
+  Library that wraps NetworkManager DBus API
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kde5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5PrintSupport
+    - NetworkManager
+    - libnm-glib
+    - libnm-util
+Requires:
+    - kde5-filesystem
+    - NetworkManager
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%{_kf5_libdir}/libKF5NetworkManagerQt.so.*"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_libdir}/libKF5NetworkManagerQt.so"
+          - "%{_kf5_libdir}/cmake/KF5NetworkManagerQt"
+          - "%{_kf5_includedir}/NetworkManagerQt"
+          - "%{_kf5_includedir}/networkmanagerqt_version.h"
+          - "%{_kf5_archdatadir}/mkspecs/modules/qt_NetworkManagerQt.pri"
+          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
