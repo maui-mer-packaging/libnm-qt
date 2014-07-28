@@ -97,7 +97,6 @@ rm -rf %{buildroot}
 %{_kde5_libdir}/cmake/KF5NetworkManagerQt
 %{_kde5_includedir}/NetworkManagerQt
 %{_kde5_includedir}/networkmanagerqt_version.h
-%{_kde5_archdatadir}/mkspecs/modules/qt_NetworkManagerQt.pri
 %{_datadir}/qt5/mkspecs/modules/*.pri
 # >> files devel
 # << files devel
