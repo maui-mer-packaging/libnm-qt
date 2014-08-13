@@ -1,4 +1,4 @@
-Name         : kde5-libnm-qt
+Name         : libnm-qt
 Version      : 5.0.91
 Release      : 1
 Group        : System/Base
@@ -22,7 +22,7 @@ Configure    : none
 Builder      : none
 
 PkgBR:
-    - kde5-rpm-macros
+    - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
 PkgConfigBR:
@@ -39,7 +39,7 @@ PkgConfigBR:
     - libnm-glib
     - libnm-util
 Requires:
-    - kde5-filesystem
+    - kf5-filesystem
     - NetworkManager
 
 RequiresPost:
@@ -48,7 +48,7 @@ RequiresPostUn:
     - /sbin/ldconfig
 
 Files:
-    - "%{_kde5_libdir}/libKF5NetworkManagerQt.so.*"
+    - "%{_kf5_libdir}/libKF5NetworkManagerQt.so.*"
 
 SubPackages:
     - Name: devel
@@ -58,7 +58,7 @@ SubPackages:
         The %{name}-devel package contains the files necessary to develop applications
         that use %{name}.
       Files:
-          - "%{_kde5_libdir}/libKF5NetworkManagerQt.so"
-          - "%{_kde5_libdir}/cmake/KF5NetworkManagerQt"
-          - "%{_kde5_includedir}/*"
-          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
+          - "%{_kf5_libdir}/libKF5NetworkManagerQt.so"
+          - "%{_kf5_cmakedir}/KF5NetworkManagerQt"
+          - "%{_kf5_includedir}/*"
+          - "%{_kf5_mkspecsdir}/*.pri"
