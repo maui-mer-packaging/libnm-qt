@@ -7,7 +7,6 @@ Summary      : Library that wraps NetworkManager DBus API
 Description  : |
   Library that wraps NetworkManager DBus API
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
