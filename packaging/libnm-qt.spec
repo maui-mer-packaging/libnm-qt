@@ -9,7 +9,7 @@ Name:       libnm-qt
 # << macros
 
 Summary:    Library that wraps NetworkManager DBus API
-Version:    5.0.91
+Version:    5.1.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
